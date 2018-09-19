@@ -4,10 +4,7 @@ import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import Scroll from "../components/Scroll";
 import Header from "../components/Header";
-<<<<<<< HEAD
 import ErrorBoundary from '../components/ErrorBoundary';
-=======
->>>>>>> 9af1d05e8504e449885f79a22972ab18f7e4deeb
 import "./App.css";
 
 import { searchAction, requestRobots } from '../actions';
@@ -40,18 +37,10 @@ class App extends Component  {
 		const filteredRobots = robots.filter(robot =>{
 			return robot.name.toLowerCase().includes(searchBox.toLowerCase())
 		})
-<<<<<<< HEAD
 		return isPending ? <h1 className="tc"> Loading </h1> :
 		<div className="tc">
-        <Header />
-		<SearchBox searchChange={searchChange}/>
-=======
-      // const pic = Object.keys(this.state.contacts).map(key=> { key={key} meta = {this.state.movies[key]} })
-		return !robots.length ? <h1 className="tc"> Loading </h1> :
-		<div className="tc">
 		<Header />
-		<SearchBox searchChange={this.searchChange}/>
->>>>>>> 9af1d05e8504e449885f79a22972ab18f7e4deeb
+		<SearchBox searchChange={searchChange}/>
 		<Scroll>
 		<ErrorBoundary>
 		   <CardList robots = {filteredRobots}/>
