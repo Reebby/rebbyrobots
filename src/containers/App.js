@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import Scroll from "../components/Scroll";
+import Header from "../components/Header";
 import "./App.css";
 
 class App extends Component  {
@@ -28,11 +29,10 @@ class App extends Component  {
 		const filteredRobots = robots.filter(robot =>{
 			return robot.name.toLowerCase().includes(searchbox.toLowerCase())
 		})
-		console.log(this.state.contacts);
       // const pic = Object.keys(this.state.contacts).map(key=> { key={key} meta = {this.state.movies[key]} })
 		return !robots.length ? <h1 className="tc"> Loading </h1> :
 		<div className="tc">
-		<h1 className="f1"> Rebby's Robots </h1>
+		<Header />
 		<SearchBox searchChange={this.searchChange}/>
 		<Scroll>
 		<CardList robots = {filteredRobots}/>
